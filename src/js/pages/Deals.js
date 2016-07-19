@@ -1,8 +1,11 @@
 import React from "react";
-
 import $ 		from "jquery";
 import ASQ  from "asynquence" 
 import Deal from "../components/Deal";
+
+var baseURL = process.env.NODE_ENV == "production"? 
+                                        "https://ctrlio-demo-api.herokuapp.com" : 
+                                        "http://localhost:3000";
 
 export default class Deals extends React.Component {
 
@@ -19,9 +22,11 @@ export default class Deals extends React.Component {
     };
   }
 
+
+
   fetchDeals(done) {
     $.ajax({
-      url      :  "http://localhost:3000/deals?clickAndCollect=false&contractLength=&data="+ 
+      url      :  baseURL + "/deals?clickAndCollect=false&contractLength=&data="+ 
                   this.state.data * 1024 +"&dedup=true&includeRefurbished=true&includeResellers=true&limit=10&mins="+ 
                   this.state.mins +"&only4g=false&page=1&sortOrder=asc&sortProperty=averaged_monthly&texts="+ 
                   this.state.texts,
@@ -45,7 +50,7 @@ export default class Deals extends React.Component {
 
   fetchNetworkProviders(done) {
     $.ajax({
-      url      :  "http://localhost:3000/networkProviders",
+      url      :  baseURL+"/networkProviders",
       dataType :  'json',
       cache    :  false,
       success  :  function sucess(response) {
