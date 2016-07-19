@@ -1,0 +1,19 @@
+.product{
+	border-color: black;
+	background-color: white;
+	border: 1px solid #D7E3E9;
+}
+
+.product > h4 {
+	color: black;
+}
+
+.navbar{
+	background-color: grey;
+}
+
+body{
+	background-color: #F9FBFC;
+	font-family: "Ideal Sans A", "Ideal Sans B", sans-serif;
+}
+
