@@ -21,4 +21,6 @@ Instructions for running:
 
 6 - Run this project by executing the command: `npm run dev`
 
+The client will run at port `8080` and the wrapper API at port `3000`
+
 
